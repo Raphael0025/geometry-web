@@ -1,0 +1,16 @@
+*{
+    font-family: roboto; 
+}
+img.logoPng { 
+    height: 100px;
+    width: auto;
+}
+div.content {
+    background-color: #FFFFFF;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+img.fbIcon {
+    width:auto;
+    height:42px;
+}

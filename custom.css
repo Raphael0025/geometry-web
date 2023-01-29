@@ -1,0 +1,41 @@
+@import url('https://fonts.googleapis.com/css?family=Open+Sans');
+
+*{
+    font-family: 'Open Sans', sans-serif;
+}
+body{
+    background-image: url("images/geometry.gif");
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+img.logoPng { 
+    height: 100px;
+    width: auto;
+}
+img.fbIcon {
+    width:auto;
+    height:42px;
+}
+.rhomBtn{
+    background-color: #E3B23C;
+}
+button.customBtn{
+    background-color: rgb(245,55,57);
+    color: #e4e4e6;
+}
+div.customBg{
+    background-color: #282828;
+    border: solid 4px #E3B23C;
+    color: #e4e4e6;
+}
+a.customBtn{
+    background-color: #E3B23C;
+    color: #e4e4e6;
+    min-width: 8vw;
+}
+a.customBtn:hover {
+    background-color: #282828;
+    border: solid 1px #E3B23C;
+    min-width: 8vw;
+}

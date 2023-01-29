@@ -1,0 +1,537 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="styles.css">
+    <link rel="stylesheet" type="text/css" href="custom.css">
+    <link rel="stylesheet" type="text/css" href="bootstrap.css">
+    <script src="bootstrap.bundle.min.js" async></script>
+    <script src="bootstrap.js" async></script>
+    <script src="script.js" async></script>
+    <title>Geometric Calculator</title>
+</head>
+<body  class="d-flex flex-column min-vh-100">
+    <header>
+        <nav class="navbar navbar-expand navbar-dark  sticky-top">
+            <div class="container-fluid" >
+                <a class="navbar-brand" onclick="Show('homepage')"><img src="images/geometricLogo.png" alt="Logo"></a>
+                <div class="collapse navbar-collapse d-flex justify-content-end me-2" id="navBarMenu">
+                    <ul class="navbar-nav">
+                        <li class="nav-item">
+                            <a type="button" class="nav-link fs-4 btn customBtn rounded-2 text-white" onclick="Show('about')">ABOUT</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+    <main class="text-center d-flex flex-md-row flex-sm-column" >
+        <div class="container-fluid col-md-2 col-sm-12 mh-100 ">
+            <p class="fs-5 text-light mt-4">SHAPES</p>
+            <div class="d-md-grid d-sm-flex flex-sm-column ">
+                <div class="flex-sm-row">
+                    <a type="button" onclick="Show('first', 'result0')" class="btn btn-warning my-md-3 my-1 col-md-12 col-sm-2 p-1">RHOMBUS</a>
+                    <a type="button" onclick="Show('second', 'result1')" class="btn btn-warning my-md-3 my-1 col-md-12 col-sm-3 p-1">TRAPEZOID</a>
+                    <a type="button" onclick="Show('third', 'result2')" class="btn btn-warning my-md-3 my-1 col-md-12 col-sm-2 p-1">TRIANGLE</a>
+                    <a type="button" onclick="Show('fourth', 'result3')" class="btn btn-warning my-md-3 my-1 col-md-12 col-sm-2 p-1">CIRCLE</a>
+                    <a type="button" onclick="Show('fifth', 'result4')" class="btn btn-warning my-md-3 my-1 col-md-12 col-sm-2 p-1">SQUARE</a>
+                </div>
+                <div class="flex-sm-row">
+                    <a type="button" onclick="Show('sixth', 'result5')" class="btn btn-warning my-md-3 my-1 col-md-12 col-sm-2 p-1">RECTANGLE</a>
+                    <a type="button" onclick="Show('seventh', 'result6')" class="btn btn-warning my-md-3 my-1 col-md-12 col-sm-3 p-1">PARALLELOGRAM</a>
+                    <a type="button" onclick="Show('eight', 'result7')" class="btn btn-warning my-md-3 my-1 col-md-12 col-sm-2 p-1">HEXAGON</a>
+                    <a type="button" onclick="Show('ninth', 'result8')" class="btn btn-warning my-md-3 my-1 col-md-12 col-sm-2 p-1">OCTAGON</a>
+                    <a type="button" onclick="Show('tenth', 'result9')" class="btn btn-warning my-md-3 my-1 col-md-12 col-sm-2 p-1">KITE</a>
+                </div>
+            </div>
+        </div>
+        <div class="content container-fluid col-10 d-inline-flex  mh-100 mt-sm-4 justify-content-center">
+            <div class="fs-2 lh-1 fw-bold col-10 text-center text-dark justify-content-center bg-warning rounded-3 m-auto p-5" id="homepage">
+                <div><p>WELCOME</p></div>
+                <div class="mb-4"><p>TO</p></div>
+                <div class="w-auto mb-4"><img class="img-responsive w-75" src="images/geometricLogo-black.png" alt="Geometric"></div>
+                <div><p>SIMPLE CALCULATOR THAT CAN PERFORM AREA AND PERIMETER CALCULATIONS FOR 10 BASIC SHAPES</p></div>
+            </div>
+
+            <div id="first" class="container-fluid w-100 h-100 p-4" style="display: none; margin-top: 3%;">
+                <div class="d-grid h-75" >
+                    <div class="row">
+                        <div class="col customBg w-50 h-100 mx-3 rounded-3">
+                            <div class="w-100 h-auto mt-3 p-1">
+                                <div class="h1 mt-3 fw-bold" >RHOMBUS</div>
+                                    <form class="text-start">
+                                        <div class="m-5">
+                                            <input type="number" class="form-control w-100 fs-5 mb-3" id="value" placeholder="Enter 1st Value">
+                                            <input type="number" class="form-control w-100 fs-5" id="value0-1" placeholder="Enter 2nd Value">
+                                            <button type="button" class="solve btn fw-bold w-100 mt-3 fs-3 customBtn" onclick="calculate(0, 10, 0, 0)">SOLVE</button>
+                                        </div>
+                                    </form>
+                            </div>
+                            <div class="bg-light text-dark py-4 mx-5 mb-5">
+                                <div class="dropend text-start w-25 ms-3">
+                                    <select id="selectFormula0" class="form-control" onchange="changeFormula(0)">
+                                        <option value="Area0">Area</option>
+                                        <option value="Perimeter0">Perimeter</option>
+                                    </select>
+                                </div>
+                                <div id="result0" class=" mt-5 h1 "><strong>A=pq/2  P=4a</strong></div>
+                            </div>
+                        </div>
+                        
+                        <div class="col customBg d-none d-lg-block rounded-3">
+                            <div class="rhombus mt-5 p-5">
+                                <div class="triangle1">
+                                    <p><em>a</em></p>
+                                    <p><em>p</em></p>
+                                    <p><em>q</em></p>
+                                    <p></p>
+                                    <p></p>
+                                </div>
+                                <div class="triangle2"></div>
+                            </div>
+                            <div class="mt-4 h4">
+                                <p class="px-4">Rhombus is a <span class="text-info">quadrilateral with all equal sides</span>. Since opposite sides of a parallelogram are equal so, rhombus is a special type of a parallelogram whose all sides are equal.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div id="second" class="container-fluid trap w-100 h-100 p-4" style="display: none; margin-top: 1%;">
+                <div class="d-grid h-75" >
+                    <div class="row">
+                        <div class="col customBg w-50 h-100 mx-3 rounded-3">
+                            <div class="w-100 h-auto mt-3 p-1">
+                                <div class="h1 mt-3 fw-bold" >TRAPEZOID</div>
+                                    <form class="text-start">
+                                        <div class="m-5">
+                                            <input type="number" class="form-control mb-3 w-100 fs-5" id="value1" placeholder="Enter 1st Value">
+                                            <input type="number" class="form-control mb-3 w-100 fs-5" id="value1-1" placeholder="Enter 2nd Value">
+                                            <input type="number" class="form-control mb-3 w-100 fs-5" id="value1-2" placeholder="Enter 3rd Value">
+                                            <input type="number" class="form-control w-100 fs-5" id="value1-3" placeholder="Enter 4th Value">
+                                            <button type="button" class="solve btn w-100 mt-3 fw-bold fs-3 customBtn" onclick="calculate(1, 11, 12, 13)">SOLVE</button>
+                                        </div>
+                                    </form>
+                            </div>
+                            <div class="bg-light text-dark py-4 mx-5 mb-5">
+                                <div class="dropend text-start w-25 ms-3">
+                                    <select id="selectFormula1" class="form-control" onchange="changeFormula(1)">
+                                        <option value="Area1">Area</option>
+                                        <option value="Perimeter1">Perimeter</option>
+                                    </select>
+                                </div>
+                                <div id="result1" class=" mt-4 h1"><strong>A={(a+b)/2}h P=a+b+c+d</strong></div>
+                            </div>
+                        </div>
+                        <div class="col customBg d-none d-lg-block rounded-3">
+                            <div id="trapezoid" class="mt-5 p-5">
+                                <p class="mt-5 p-4"><em>a</em></p>
+                                <p><em>b</em></p>
+                                <p><em>c</em></p>
+                                <p><em>d</em></p>
+                                <p><em>h</em></p>
+                                <p></p>
+                            </div>
+                            <div class="mt-4 h4">
+                                <p class="px-4">A trapezoid is a <span class="text-info">quadrilateral with one pair of opposite sides parallel</span>. It can have right angles (a right trapezoid), and it can have congruent sides (isosceles), but those are not required.</p>
+                            </div>                          
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div id="third" class="container-fluid triangle w-100 h-100 p-4" style="display: none; margin-top: 2%">
+                <div class="d-grid h-75" >
+                    <div class="row">
+                        <div class="col customBg w-50 h-100 mx-3 rounded-3">
+                            <div class="w-100 h-auto mt-3 p-1">
+                                <div class="h1 mt-3 fw-bold" >TRIANGLE</div>
+                                    <form class="text-start">
+                                        <div class="m-5">
+                                            <input type="number" class="form-control w-100 mb-3 fs-5" id="value2" placeholder="Enter 1st Value">
+                                            <input type="number" class="form-control w-100 mb-3 fs-5" id="value2-1" placeholder="Enter 2nd Value">
+                                            <input type="number" class="form-control w-100 fs-5" id="value2-2" placeholder="Enter 3rd Value">
+                                            <button type="button" class="solve btn w-100 mt-3 fw-bold fs-3 customBtn" onclick="calculate(2, 14, 15, 0)">SOLVE</button>
+                                        </div>
+                                    </form>
+                            </div>
+                            <div class="bg-light text-dark py-4 mx-5 mb-5">
+                                <div class="dropend text-start w-25 ms-3">
+                                    <select id="selectFormula2" class="form-control" onchange="changeFormula(2)">
+                                        <option value="Area2">Area</option>
+                                        <option value="Perimeter2">Perimeter</option>
+                                    </select>
+                                </div>
+                                <div id="result2" class=" mt-5 h1 "><strong>A=HbB/2 P=a+b+c</strong></div>
+                            </div>
+                        </div>
+                        <div class="col customBg  d-none d-lg-block rounded-3">
+                            <div class="my-5 p-5">
+                                <div id="triangle">
+                                    <p><em>a</em></p>
+                                    <p><em>b</em></p>
+                                    <p>
+                                        <em>h</em> <sub><em>b</em></sub>
+                                    </p>
+                                    <p><em>c</em></p>
+                                    <p><em>Y</em></p>
+                                    <div class="small-box"></div>
+                                </div>
+                                <div class="my-4 h4">
+                                    <p class="px-4">A triangle is a closed, <span class="text-info">2-dimensional shape with 3 sides, 3 angles, and 3 vertices</span>. A triangle is also a polygon. The above figure is a triangle denoted as △ABC.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div id="fourth" class="container-fluid circl w-100 h-100 p-4" style="display: none; margin-top: 5%;">
+                <div class="d-grid h-75" >
+                    <div class="row">
+                        <div class="col customBg w-50 h-100 mx-3 rounded-3">
+                            <div class="w-100 h-auto p-1 mt-4">
+                                <div class="h1 fw-bold">CIRCLE</div>
+                                    <form class="text-start">
+                                        <div class="m-5">
+                                            <input type="number" class="form-control w-100 fs-5" id="value3" placeholder="Enter Value">
+                                            <button type="button" class="solve btn w-100 mt-3 fw-bold fs-3 customBtn"  onclick="calculate(3, 0, 0, 0)">SOLVE</button>
+                                        </div>
+                                    </form>
+                            </div>
+                            <div class="bg-light text-dark py-4 m-5">
+                                <div class="dropend text-start w-25 ms-3">
+                                    <select id="selectFormula3" class="form-control" onchange="changeFormula(3)">
+                                        <option value="Area3">Area</option>
+                                        <option value="Perimeter3">Perimeter</option>
+                                    </select>
+                                </div>
+                                <div id="result3" class=" mt-5 h1 "><strong>A = πr^2  C = 2πr</strong></div>
+                            </div>
+                        </div>
+                        <div class="col customBg d-none d-lg-block rounded-3">
+                            <div class="mt-5 p-5">
+                                <div id="circle">
+                                    <p><em>r</em></p>
+                                    <p><em>d</em></p>
+                                    <p></p>
+                                    <p></p>
+                                    <p></p>
+                                </div>
+                                <div class="mt-4 h4">
+                                    <p class="px-4">A circle is a round-shaped figure that has no corners or edges. In geometry, a circle can be defined as <span class="text-info">a closed, two-dimensional curved shape</span>.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div id="fifth" class="container-fluid squar w-100 h-100 p-4" style="display: none; margin-top: 5%">
+                <div class="d-grid h-75" >
+                    <div class="row">
+                        <div class="col customBg w-50 h-100 mx-3 rounded-3">
+                            <div class="w-100 h-auto mt-3 p-1">
+                                <div class="h1 mt-3 fw-bold" >SQUARE</div>
+                                    <form class="text-start">
+                                        <div class="m-5">
+                                            <input type="number" class="form-control w-100 fs-5" id="value4" placeholder="Enter Value">
+                                            <button type="button" class="solve btn w-100 mt-3 fw-bold fs-3 customBtn" onclick="calculate(4, 0, 0, 0)">SOLVE</button>
+                                        </div>
+                                    </form>
+                            </div>
+                            <div class="bg-light text-dark py-4 mx-5">
+                                <div class="dropend text-start w-25 ms-3">
+                                    <select id="selectFormula4" class="form-control" onchange="changeFormula(4)">
+                                        <option value="Area4">Area</option>
+                                        <option value="Perimeter4">Perimeter</option>
+                                    </select>
+                                </div>
+                                <div id="result4" class=" mt-5 h1 "><strong>A=a2 P=4a</strong></div>
+                            </div>
+                        </div>
+                        <div class="col customBg d-none d-lg-block rounded-3">
+                            <div class="mt-5 p-5">
+                                <div id="square">
+                                    <p><em>a</em></p>
+                                    <p><em>d</em></p>
+                                    <p></p>
+                                </div>
+                                <div class="mt-4 h4">
+                                    <p class="px-4">A square is <span class="text-info">closed, two-dimensional shape with 4 equal sides</span>.</p>
+                                </div>
+                            </div>
+                            
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div id="sixth" class="container-fluid rectangl w-100 h-100 p-4" style="display: none; margin-top: 2%">
+                <div class="d-grid h-75" >
+                    <div class="row">
+                        <div class="col customBg w-50 h-100 mx-3 rounded-3">
+                            <div class="w-100 h-auto mt-3 p-1">
+                                <div class="h1 mt-3 fw-bold" >RECTANGLE</div>
+                                    <form class="text-start">
+                                        <div class="m-5">
+                                            <input type="number" class="form-control mb-3 w-100 fs-5" id="value5" placeholder="Enter 1st Value">
+                                            <input type="number" class="form-control w-100 fs-5" id="value5-1" placeholder="Enter 2nd Value">
+                                            <button type="button" class="solve btn w-100 mt-3 fw-bold fs-3 customBtn" onclick="calculate(5, 16, 0, 0)">SOLVE</button>
+                                        </div>
+                                    </form>
+                            </div>
+                            <div class="bg-light text-dark py-4 mx-5 mb-5">
+                                <div class="dropend text-start w-25 ms-3">
+                                    <select id="selectFormula5" class="form-control" onchange="changeFormula(5)">
+                                        <option value="Area5">Area</option>
+                                        <option value="Perimeter5">Perimeter</option>
+                                    </select>
+                                </div>
+                                <div id="result5" class=" mt-5 h1 "><strong>A=wl P=2(l+w)</strong></div>
+                            </div>
+                        </div>
+                        <div class="col customBg d-none d-lg-block rounded-3">
+                            <div class="mt-5 p-5">
+                                <div id="rectangle">
+                                    <p><em>w</em></p>
+                                    <p><em>d</em></p>
+                                    <p><em>l</em></p> 
+                                    <p></p>
+                                </div>
+                            </div>
+                            <div class="mt-4 h4">
+                                <p class="px-4">A rectangle is a <span class="text-info">2D shape in geometry, having 4 sides and 4 corners</span>. Its two sides meet at right angles. Thus, a rectangle has 4 angles, each measuring 90 ̊. The opposite sides of a rectangle have the same lengths and are parallel.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div id="seventh" class="container-fluid parallel w-100 h-100 p-4" style="display: none; margin-top: 2%">
+                <div class="d-grid h-75" >
+                    <div class="row">
+                        <div class="col customBg w-50 h-100 mx-3 rounded-3">
+                            <div class="w-100 h-auto mt-3 p-1">
+                                <div class="h1 mt-3 fw-bold" >PARALLELOGRAM</div>
+                                    <form class="text-start">
+                                        <div class="m-5">
+                                            <input type="number" class="form-control mb-3 w-100 fs-5" id="value6" placeholder="Enter 1st Value">
+                                            <input type="number" class="form-control w-100 fs-5" id="value6-1" placeholder="Enter 2nd Value">
+                                            <button type="button" class="solve btn w-100 mt-3 fw-bold fs-3 customBtn" onclick="calculate(6, 17, 0, 0)">SOLVE</button>
+                                        </div>
+                                    </form>
+                            </div>
+                            <div class="bg-light text-dark py-4 mx-5 mb-5">
+                                <div class="dropend text-start w-25 ms-3">
+                                    <select id="selectFormula6" class="form-control" onchange="changeFormula(6)">
+                                        <option value="Area6">Area</option>
+                                        <option value="Perimeter6">Perimeter</option>
+                                    </select>
+                                </div>
+                                <div id="result6" class=" mt-5 h1 "><strong>A=bh P=2(a+b)</strong></div>
+                            </div>
+                        </div>
+                        <div class="col customBg d-none d-lg-block rounded-3">
+                            <div class="mt-5 p-5">
+                                <div id="parallelogram">
+                                    <p><em>a</em></p>
+                                    <p><em>b</em></p>
+                                    <p><em>h</em></p>
+                                    <p></p>
+                                    <p class="small-box"></p>
+                                </div>
+                                <div class="mt-4 h4">
+                                    <p class="px-4">A parallelogram is a <span class="text-info">special type of quadrilateral that has both the pair of opposite sides parallel and equal</span>.</p>
+                                </div>
+                            </div>
+                            
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div id="eight" class="container-fluid hexagon w-100 h-100 p-4 " style="display: none; margin-top: 5%;">
+                <div class="d-grid" style="height: 80%;" >
+                    <div class="row">
+                        <div class="col customBg w-50 h-100 mx-3 rounded-3">
+                            <div class="w-100 h-auto mt-3 p-1">
+                                <div class="h1 mt-3 fw-bold" >HEXAGON</div>
+                                    <form class="text-start">
+                                        <div class="m-5">
+                                            <input type="number" class="form-control w-100 fs-5" id="value7" placeholder="Enter Value">
+                                            <button type="button" class="solve btn w-100 mt-3 fw-bold fs-3 customBtn" onclick="calculate(7, 0, 0, 0)">Solve</button>                                        
+                                        </div>
+                                    </form>
+                            </div>
+                            <div class="bg-light text-dark py-4 mx-5" style="height: 40%;">
+                                <div class="dropend text-start w-25 ms-3">
+                                    <select id="selectFormula7" class="form-control" onchange="changeFormula(7)">
+                                        <option value="Area7">Area</option>
+                                        <option value="Perimeter7">Perimeter</option>
+                                    </select>
+                                </div>
+                                <div id="result7" class="mt-5 fw-bold h2 h-100"><strong>A={(3√3)/2}a2 P=6a</strong></div>
+                            </div>
+                        </div>
+                        <div class="col d-none d-lg-block customBg rounded-3">
+                            <div class="mt-5 p-5">
+                                <div class="hex ms-0 text-start">
+                                    <p><em>a</em></p>
+                                </div>
+                            </div>
+                            <div class="mt-4 h4">
+                                <p class="px-4">A hexagon can be defined as <span class="text-info">a closed two-dimensional polygon with six sides</span>. Hexagon has 6 vertices and 6 angles also.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div id="ninth" class="container-fluid octagon w-100 h-100 p-4" style="display: none; margin-top: 5%">
+                <div class="d-grid h-75" >
+                    <div class="row">
+                        <div class="col customBg w-50 h-100 mx-3 rounded-3">
+                            <div class="w-100 h-auto mt-3 p-1">
+                                <div class="h1 mt-3 fw-bold" >OCTAGON</div>
+                                    <form class="text-start">
+                                        <div class="m-5">
+                                            <input type="number" class="form-control w-100 fs-5" id="value8" placeholder="Enter Value">
+                                            <button type="button" class="solve btn w-100 mt-3 fw-bold fs-3 customBtn" onclick="calculate(8, 0, 0, 0)">SOLVE</button>
+                                        </div>
+                                    </form>
+                            </div>
+                            <div class="bg-light text-dark py-4 mx-5">
+                                <div class="dropend text-start w-25 ms-3">
+                                    <select id="selectFormula8" class="form-control" onchange="changeFormula(8)">
+                                        <option value="Area8">Area</option>
+                                        <option value="Perimeter8">Perimeter</option>
+                                    </select>
+                                </div>
+                                <div id="result8" class=" mt-5 h1 "><strong>A=2(1+√2)a2 P=8a</strong></div>
+                            </div>
+                        </div>
+                        <div class="col d-none d-lg-block customBg rounded-3">
+                            <div class="mt-5 p-5">
+                                <div id="octagon" >
+                                    <p></p>
+                                    <p><em>a</em></p>
+                                </div>
+                                <div class="mt-4 h4">
+                                    <p class="px-4">An octagon is a <span class="text-info">polygon made up of 8 sides</span>. It has eight angles. Octagon = Octa + gon where octa means eight and gon means sides.</p>
+                                </div>
+                            </div>
+                            
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div id="tenth" class="container-fluid kite w-100 h-100 p-4" style="display: none; margin-top: 2%">
+                <div class="d-grid h-75" >
+                    <div class="row">
+                        <div class="col customBg w-50 h-100 mx-3 rounded-3">
+                            <div class="w-100 h-auto mt-3 p-1">
+                                <div class="h1 mt-3 fw-bold" >KITE</div>
+                                    <form class="text-start">
+                                        <div class="m-5">
+                                            <input type="number" class="form-control w-100 fs-5 mb-3" id="value9" placeholder="Enter 1st Value">
+                                            <input type="number" class="form-control w-100 fs-5" id="value9-1" placeholder="Enter 2nd Value">
+                                            <button type="button" class="solve btn w-100 mt-3 fw-bold fs-3 customBtn" onclick="calculate(9, 18, 0, 0)">SOLVE</button>
+                                        </div>
+                                    </form>
+                            </div>
+                            <div class="bg-light text-dark py-4 mt-0 me-5 ms-5 mb-5">
+                                <div class="dropend text-start w-25 ms-3">
+                                    <select id="selectFormula9" class="form-control" onchange="changeFormula(9)">
+                                        <option value="Area9">Area</option>
+                                        <option value="Perimeter9">Perimeter</option>
+                                    </select>
+                                </div>
+                                <div id="result9" class=" mt-5 h1 "><strong>A=pq/2 P=2(a+b)</strong></div>
+                            </div>
+                        </div>
+                        <div class="col d-none d-lg-block customBg rounded-3">
+                            <div class="mt-5 p-5">
+                                <div id="kite">
+                                    <div class="arrow-left">
+                                        <p><em>a</em></p>
+                                        <p><em>b</em></p>
+                                        <p><em>a</em></p>
+                                        <p><em>b</em></p>
+                                        <p><em>q</em></p>
+                                        <p><em>p</em></p>
+                                    </div>
+                                    <div class="arrow-right"></div>
+                                </div>
+                            </div>
+                            <div class="mt-4 h4">
+                                <p class="px-4">A kite is a <span class="text-info">quadrilateral that has 2 pairs of equal-length sides and these sides are adjacent to each other</span>.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div id="about" class="container-fluid vh-75 w-100 mt-1 mb-5 btn-warning rounded-3" style="display: none">
+                <div class="row"><p class="fs-1 fw-bold bg-dark text-white rounded-top">COLLABORATORS</p></div>
+                <div class="row m-2 justify-content-center gx-5">
+                    <div class="raph col-3">
+                        <div class="row image"><img src="images/rap-thumbnail.png" alt="Raphael"></div>
+                        <div class="row name"><p class="fs-4 fw-bold text-dark">Raphael Isla</p></div>
+                        <div class="row social">
+                            <a type="button" class="btn btn-dark" href="https://www.facebook.com/RpB.Isla"><img class="fbIcon" src="images/fb-icon.png" alt="fb">
+                            </a></div>
+                    </div>
+                    <div class="rox col-3">
+                        <div class="row image"><img src="images/rox-thumbnail.png" alt="Roxanne"></div>
+                        <div class="row name"><p class="fs-4 fw-bold text-dark">Ma. Roxanne Lagazon</p></div>
+                        <div class="row social">
+                            <a type="button" class="btn btn-dark" href="https://www.facebook.com/rox.valdez18"><img class="fbIcon" src="images/fb-icon.png" alt="fb">
+                        </a></div>
+                    </div>
+                    <div class="jeric col-3">
+                        <div class="row image"><img src="images/jeric-thumbnail.png" alt="Jeric"></div>
+                        <div class="row name"><p class="fs-4 fw-bold text-dark">Jeric Moreno</p></div>
+                        <div class="row social">
+                            <a type="button" class="btn btn-dark" href="https://www.facebook.com/100007137708417"><img class="fbIcon" src="images/fb-icon.png" alt="fb">
+                        </a></div>
+                    </div>
+                    <div class="marvin col-3">
+                        <div class="row image"><img src="images/marv-thumbnail.png" alt="Marvin"></div>
+                        <div class="row name"><p class="fs-4 fw-bold text-dark">Marvin Santillan</p></div>
+                        <div class="row social">
+                            <a type="button" class="btn btn-dark" href="https://www.facebook.com/mrvnsntlln"><img class="fbIcon" src="images/fb-icon.png" alt="fb">
+                        </a></div>
+                    </div>
+                </div>
+                <div class="row justify-content-center mb-3 gx-5">
+                    <div class="markv col-3">
+                        <div class="row image"><img src="images/markv-thumbnail.png" alt="Mark"></div>
+                        <div class="row name"><p class="fs-4 fw-bold text-dark mb-0">Mark Viloria</p></div>
+                        <div class="row social">
+                            <a type="button" class="btn btn-dark" href="https://www.facebook.com/kram.viloria"><img class="fbIcon" src="images/fb-icon.png" alt="fb">
+                            </a></div>
+                    </div>
+                    <div class="fred col-3">
+                        <div class="row image"><img src="images/fred-thumbnail.png" alt="Frederick"></div>
+                        <div class="row name"><p class="fs-4 fw-bold text-dark mb-0">Frederick Reyes</p></div>
+                        <div class="row social">
+                            <a type="button" class="btn btn-dark" href="https://www.facebook.com/fnreyes01/"><img class="fbIcon" src="images/fb-icon.png" alt="fb">
+                            </a></div>
+                    </div>
+                    <div class="jericho col-3">
+                        <div class="row image"><img src="images/jericho-thumbnail.png" alt="Jericho"></div>
+                        <div class="row name"><p class="fs-4 fw-bold text-dark mb-0">Jericho Bongay</p></div>
+                        <div class="row social">
+                            <a type="button" class="btn btn-dark" href="https://www.facebook.com/wyd.jeco"><img class="fbIcon" src="images/fb-icon.png" alt="fb">
+                            </a></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+</body>
+</html>
